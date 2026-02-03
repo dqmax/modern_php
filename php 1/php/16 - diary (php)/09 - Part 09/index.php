@@ -4,7 +4,7 @@ var_dump($_FILES);
 
 if (!empty($_FILES) && !empty($_FILES['image'])) {
     if ($_FILES['image']['error'] === 0 && $_FILES['image']['size'] !== 0) {
-        move_uploaded_file($_FILES['image']['tmp_name'], __DIR__ . '/' . $_FILES['image']['name']);
+        move_uploaded_file($_FILES['image']['tmp_name'], __DIR__ . '/' . time() . '.jpeg');
     }
 }
 ?><!DOCTYPE html>

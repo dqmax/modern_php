@@ -3,12 +3,14 @@ require __DIR__ . '/inc/db-connect.inc.php';
 require __DIR__ . '/inc/functions.inc.php';
 global $pdo;
 
+date_default_timezone_set('Europe/Chisinau');
+
 $perPage = 2;
 $page = (int) ($_GET['page'] ?? 1);
 $offset = ($page - 1) * $perPage;
 
 $stmt = $pdo->prepare('SELECT * FROM `entries` ORDER BY `date` DESC, `id` DESC LIMIT :perPage OFFSET :offset');
-$stmt->bindValue('perPage', (int) $perPage, PDO::PARAM_INT);
+$stmt->bindValue('perPage', $perPage, PDO::PARAM_INT);
 $stmt->bindValue('offset', (int) $offset, PDO::PARAM_INT);
 $stmt->execute();
 $entries = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -58,7 +60,7 @@ closedir($handle);
                     <?php //endforeach;?>
                 </div>
                 <div class="card__desc-container">
-                    <div class="card__desc-time"><?php echo e($entry['date'])?></div>
+                    <div class="card__desc-time"><?php echo date('F j, Y', e(strtotime($entry['date'])))?></div>
                     <h2 class="card__heading"><?php echo e($entry['title'])?></h2>
                     <p class="card__paragraph">
                         <?php echo e($entry['message'])?>
