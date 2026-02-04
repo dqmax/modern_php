@@ -3,6 +3,8 @@ require __DIR__ . '/inc/db-connect.inc.php';
 require __DIR__ . '/inc/functions.inc.php';
 global $pdo;
 
+getimagesize($_FILES['file']['tmp_name']);
+
 
 var_dump($_POST);
 if (!empty($_POST)) {
