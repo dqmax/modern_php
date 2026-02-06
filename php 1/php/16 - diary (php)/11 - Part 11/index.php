@@ -1,25 +1,27 @@
 <?php
 [$width, $height] = getimagesize(__DIR__ . '/IMG_0294.jpeg');
 
-var_dump($width);
-var_dump($height);
+//var_dump($width);
+//var_dump($height);
 
 $maxDim = 400;
 $scaleFactor = $maxDim / max($width, $height);
-var_dump($scaleFactor);
+//var_dump($scaleFactor);
 
 $newWidth = $width * $scaleFactor;
 $newHeight = $height * $scaleFactor;
 
-var_dump($newWidth);
-var_dump($newHeight);
+//var_dump($newWidth);
+//var_dump($newHeight);
 
 $im = imagecreatefromjpeg(__DIR__ . '/IMG_0294.jpeg');
-var_dump($im);
+//var_dump($im);
 
-
-
-
+$newImg = imagecreatetruecolor($newWidth, $newHeight);
+//var_dump($newImg);
+imagecopyresampled($newImg, $im, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+header("Content-Type: image/jpeg");
+imagejpeg($newImg, 'image_scaled.jpeg');
 
 
 

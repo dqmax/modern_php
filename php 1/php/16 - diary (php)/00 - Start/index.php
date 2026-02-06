@@ -20,31 +20,7 @@ $stmtCount->execute();
 $count = $stmtCount->fetch(PDO::FETCH_ASSOC)['count'];
 $numPages = ceil($count / $perPage);
 
-//var_dump($entries);
-/*
-$handle = opendir(__DIR__ . '/images');
 
-$images = [];
-$allowedExtensions = [
-        'jpg',
-        'jpeg',
-        'png'
-];
-while (($currentFile = readdir($handle)) !== false) {
-    if ($currentFile === '.' || $currentFile === '..') {
-        continue;
-    }
-    $extension = pathinfo($currentFile, PATHINFO_EXTENSION);
-    if (!in_array($extension, $allowedExtensions)) {
-        continue;
-    }
-
-    $images[] = $currentFile;
-}
-var_dump($images);
-
-closedir($handle);
-*/
 ?>
 
 <?php include __DIR__ . '/inc/header.inc.php'; ?>
@@ -54,11 +30,11 @@ closedir($handle);
         <h1 class="main-heading">Entries</h1>
         <?php foreach ($entries as $entry) : ?>
             <div class="card">
-                <div class="card__image-container">
-                    <?php // foreach($images as $image) : var_dump($image); ?>
-                        <img class="card__image" src="images/pexels-lumn-167682.jpg<?php // echo rawurldecode($image)?>" alt="" />
-                    <?php //endforeach;?>
-                </div>
+                <?php if (!empty($entry['image'])) : ?>
+                    <div class="card__image-container">
+                        <img class="card__image" src="images/pexels-lumn-167682.jpg" alt="" />
+                    </div>
+                <?php endif; ?>
                 <div class="card__desc-container">
                     <div class="card__desc-time"><?php echo date('F j, Y', e(strtotime($entry['date'])))?></div>
                     <h2 class="card__heading"><?php echo e($entry['title'])?></h2>
