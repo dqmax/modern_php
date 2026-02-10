@@ -10,9 +10,9 @@ form {
 	min-height: 50px;
 }
 
-.list-group-item .btn-group {
+/* .list-group-item .btn-group {
 	display: none;
-}
+} */
 
 .list-group-item:hover .btn-group {
 	display: inline-flex;

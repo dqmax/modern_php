@@ -21,5 +21,5 @@ var_dump($findings);
 var_dump(preg_match('/\d\d\w\w/', $message, $findings));
 var_dump($findings);
 
-var_dump(preg_match('/\d\dth/', $message, $findings));
+var_dump(preg_match('/day/', $message, $findings));
 var_dump($findings);

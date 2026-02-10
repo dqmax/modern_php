@@ -30,9 +30,9 @@ if (isset($_GET['action']) && $_GET['action'] === 'changeStatus' && isset($_GET[
     } else {
         $task->status = 'ready';
     }
+  R::store($task);
 }
 
-R::store($task);
 
 // get all tasks
 $tasks = R::findAll('tasks');
@@ -54,12 +54,10 @@ $count_undone = $count_tasks - $count_done;
 <?php include(ROOT . 'templates/page_parts/head.tpl'); ?>
 
 <body class="todo-app p-5">
-    <?php include(ROOT . 'templates/page_parts/header.tpl'); ?>
+    <?php include(ROOT . 'templates/page_parts/header.php'); ?>
 
 	<ul class="list-group mb-3">
         <?php
-
-        $tasks = R::findAll('tasks');
 
         if (empty($tasks)){
            include(ROOT . 'templates/empty.tpl');
