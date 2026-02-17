@@ -9,3 +9,6 @@ var_dump(preg_match('/^\d/', $message));
 var_dump(preg_match('/^\d+\.\d+$/', '123.45'));
 
 var_dump(preg_match('/^.+@.+\..+$/', 'user@example.com'));
+
+var_dump(preg_match('/.+/', $message, $array));
+var_dump($array);

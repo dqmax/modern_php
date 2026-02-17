@@ -1,11 +1,14 @@
-<?php
+<?php 
 
-require __DIR__ . '/inc/all.inc.php';
+require_once './inc/all.inc.php';
+require_once './config.php';
 
+$alphabet = range('A', 'Z');
 
-?>
+$name = (string) ($_GET['name'] ?? '');
+        
+$overview = get_name_overview($name);
 
-<?php require __DIR__ . '/views/header.php'; ?>
-
-
-<?php require __DIR__ . '/views/footer.php'; ?>
+render("index.view", [
+    'overview' => $overview
+]);

@@ -5,7 +5,7 @@ header('Content-Type: text/plain');
 
 class BankAccount {
     public string $nr;
-    public string $holder;
+    public string $holder = 'empty';
     public float $balance = 0;
 
     public $something;

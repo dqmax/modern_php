@@ -33,3 +33,4 @@ function gen_names_overview(): array {
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+

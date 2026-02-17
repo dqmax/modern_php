@@ -1,12 +1,17 @@
 <?php
 
+require_once './config.php';
+
 try {
-    $pdo = new PDO('mysql:host=localhost;dbname=names;charset=utf8mb4', 'names', 'k/CG@c[@*JqNkICm', [
+    $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8mb4',
+     DB_USER, 
+     DB_PASS, 
+     [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 }
 catch (PDOException $e) {
-    // var_dump($e->getMessage());
+    var_dump($e->getMessage());
     echo 'A problem occured with the database connection...';
     die();
 }

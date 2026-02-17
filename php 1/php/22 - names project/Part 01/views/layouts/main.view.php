@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+$alphabet = range('A', 'Z');
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

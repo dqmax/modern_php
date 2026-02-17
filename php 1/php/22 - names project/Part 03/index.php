@@ -16,7 +16,7 @@ $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 foreach ($results AS $result) {
     $names[] = $result['name'];
 }
-var_dump($names);
+// var_dump($names);
 
 ?>
 <?php require __DIR__ . '/views/header.php'; ?>
