@@ -24,3 +24,4 @@ $account2->holder = 'Avery Morgan';
 $account2->balance = 250.00;
 $account2->printBalance();
 
+var_dump($account2);

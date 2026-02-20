@@ -14,6 +14,8 @@ class BankAccount {
       
     }
 
+
+
     function printBalance() {
         echo "The balance of account #{$this->nr} is {$this->balance}.\n";
     }
@@ -21,7 +23,6 @@ class BankAccount {
 
 $account1 = new BankAccount('2349785623478', 'Olivia Mason', 1250.00);
 $account1->printBalance();
-
 
 
 
