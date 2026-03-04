@@ -15,7 +15,7 @@ function autoload($class) {
         return;
     }
 }
-*/
+
 /*
 function autoload($class) {
     // var_dump($class);

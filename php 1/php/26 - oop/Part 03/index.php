@@ -6,6 +6,7 @@ require __DIR__ . '/src/Admin/Role.php';
 require __DIR__ . '/src/Admin/User.php';
 require __DIR__ . '/src/Client/User.php';
 
+var_dump("Admin\\User");
 var_dump(User::class);
 var_dump(Client::class);
 

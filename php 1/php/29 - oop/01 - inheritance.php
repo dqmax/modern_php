@@ -22,11 +22,12 @@ class Dog extends Animal {
 
 $animal = new Animal();
 $animal->move();
-// $animal->bark();
+//$animal->bark();
 
 $dog = new Dog();
 $dog->move();
 $dog->bark();
+$dog->eat();
 
 /*
 var_dump($animal);

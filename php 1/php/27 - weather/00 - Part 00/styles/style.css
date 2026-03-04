@@ -6,9 +6,8 @@ html {
 }
 
 body {
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(75,75,75);
 }
-
 
 .app-container {
     width: 25rem;
@@ -17,8 +16,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-top: max(0px, calc((100vh - 40rem) / 2));
-    box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5);
-    background-color: rgb(71, 174, 234);
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0, 0.5);
+    background-color: black;
     background-size: cover;
     background-position: 50% center;
 }
@@ -29,17 +28,15 @@ body {
     align-items: baseline;
 }
 
-.top-bar__location {
-    padding: 1.5rem 2rem;
-    color: white;
-    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
-}
-
 .top-bar__date {
     padding: 1.5rem 2rem;
-    color: white; 
+    color: white;
     font-weight: bold;
-    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.top-bar__location{
+    padding: 1.5rem 2rem;
+    color: white;
 }
 
 .icon {
@@ -52,9 +49,10 @@ body {
 
 .weather-info__image {
     display: block;
-    max-width: 12rem;
-    margin: 1.5rem auto 0rem auto;
+    max-width: 10rem;
+    margin: 1rem auto 0rem auto;
     filter: drop-shadow(0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.5));
+
 }
 
 .weather-info__temperature {
@@ -65,31 +63,14 @@ body {
     font-weight: lighter;
     margin-top: 1.5rem;
     margin-bottom: 0;
-} 
+}
 
 .weather-info__desc {
     text-align: center;
     color: white;
     text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
     font-weight: lighter;
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
-.links {
-    text-align: center;
-    background-color: #3a3a3a;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.links a {
-    color: white;
-    text-decoration: none;
-    margin-right: 15px;
-    font-weight: bold;
-}
-
-.links a:hover {
-    color: #00bfff;
-}

@@ -28,4 +28,5 @@ $dog = new Dog('Golden Retriever', 30);
 var_dump($dog);
 $dog->move();
 $dog->bark();
-$dog->eat();
+$dog->eat(); 
+

@@ -29,7 +29,7 @@ class Dog extends Animal {
     }
 }
 
-$dog = new Dog('Golden Retriever', 30);
+$dog = new Dog('Golden Retriever', 40);
 $dog->move();
 $dog->bark();
 $dog->eat();
