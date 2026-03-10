@@ -13,6 +13,10 @@
             <a href="index.php">CMS Project</a>
         </h1>
         <p>A custom-made CMS system</p>
+        <nav>
+            <a href="index.php?page=index">Home</a>
+            <a href="index.php?page=about-us">About Us</a>
+        </nav>
     </header>
     <main>
         <?php echo $contents; ?>

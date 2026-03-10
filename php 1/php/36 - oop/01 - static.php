@@ -10,10 +10,10 @@ class Car {
         var_dump("Car::drive has been called, {$brand}");
     }
 }
-/*
-$bmw = new Car();
-$bmw->drive();
-*/
+
+// $bmw = new Car();
+// $bmw->drive();
+
 
 Car::drive();
 var_dump(Car::$brand);

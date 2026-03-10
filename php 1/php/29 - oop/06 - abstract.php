@@ -14,8 +14,8 @@ abstract class Animal {
 }
 class Dog extends Animal {
     protected function getWeight(): int {
-        return 40;
-    }
+    return 40;
+}
 }
 
 $dog = new Dog();

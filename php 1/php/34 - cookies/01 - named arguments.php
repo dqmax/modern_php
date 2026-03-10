@@ -15,4 +15,4 @@ function print_5x($str = 'Hello World', $times = 5) {
 $number = 3;
 // print_5x(times: $number);
 
-print_5x(times: 3, str: 'Hello World!');
+print_5x(times: 3, str: '123');

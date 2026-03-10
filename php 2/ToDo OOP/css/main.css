@@ -1,0 +1,57 @@
+body {
+    background: linear-gradient(to right, aqua, blue);
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     
+    height: 100vh;           /* Ensures the container takes up the full viewport height */
+    margin: 0;               /* Removes default body margin */
+}
+
+.container {
+    background-color: white;
+    width: 440px;
+    height: auto;
+}
+
+.container__content {
+    margin: 20px;
+}
+
+.list-group {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    background-color: #E8E8E8;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.btn-danger {
+    margin-left: 5px;
+    height: 42px;
+}
+
+.btn-primary {
+    margin-left: 5px;
+}
+
+.input__container {
+    display: flex;
+    margin: 20px 0 20px 0;
+}
+
+.task__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.active-tasks__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+
+
