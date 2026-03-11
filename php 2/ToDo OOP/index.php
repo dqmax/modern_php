@@ -1,50 +1,15 @@
 <?php 
 
-require __DIR__ . '/inc/db-connection.inc.php';
+require __DIR__ . '/inc/database.php';
+require __DIR__ . '/inc/autoload.php';
 
-$action = (string) ($_GET['action'] ?? 'index');
+$taskRepository = new App\Repository\TaskRepository($pdo);
+$taskService = new App\Controller\TaskService($taskRepository);
+$taskController = new App\Controller\TaskController();
 
-if(!empty($_GET['title'])){
-    $title = (string) ($_GET['title']);
-}
-
-if(isset($_GET['delete'])){
-    $id = (int) ($_GET['delete']);
-}
-
-$stmt = $pdo->prepare('SELECT * FROM `tasks`');
-$stmt->execute();
-$tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-$stmt = $pdo->prepare('SELECT COUNT(*) FROM tasks;');
-$stmt->execute();
-$count = $stmt->fetch(PDO::FETCH_ASSOC);
-$count = $count["COUNT(*)"];
-
-if (!empty($action) && isset($action)){
-    if ($action === 'submit'){
-        $stmt = $pdo->prepare('INSERT INTO `tasks` (`title`) VALUES (:title)');
-        $stmt->bindValue(':title', $title);
-        $stmt->execute();
-
-        header("Location: index.php");
-    }
-
-    if ($action === 'delete-all'){
-        $stmt = $pdo->prepare('DELETE FROM `tasks`');
-        $stmt->execute();
-
-        header("Location: index.php");
-    }
-
-    if (isset($_GET['delete'])){
-        $stmt = $pdo->prepare('DELETE FROM `tasks` WHERE `id` = :id');
-        $stmt->bindValue(':id', $id);
-        $stmt->execute();
-
-        header("Location: index.php");
-    }
-}
+$taskController->action($taskService);
+$tasks = $taskService->readAll();
+$count = $taskService->countAll();
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -62,10 +27,12 @@ if (!empty($action) && isset($action)){
 
             <form action="index.php" method="GET">
                 <div class="input__container">
-                    <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Enter your task:">
+                    <input type="text" name="title" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Enter your task:" required>
                     <input type="submit" class="btn btn-primary" name="action" value="submit">
                 </div>
+            </form>
                 
+            <form action="index.php" method="GET">
                 <ul class="list-group">
                     <?php foreach($tasks as $task): ?>
                         <div class="task__container">
@@ -79,7 +46,6 @@ if (!empty($action) && isset($action)){
                     <p class="active-tasks__text">You have active: <b><u><?php echo $count;?></u></i></b> tasks.</p>
                     <button type="submit" class="btn btn-secondary" name="action" value="delete-all">Clear All</button>
                 </div>
-                    
             </form>
         </div>
     </div>
