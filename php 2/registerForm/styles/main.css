@@ -1,0 +1,23 @@
+body {
+    background: rgb(211, 211, 211);
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;           
+    margin: 0;              
+}
+
+.button-area {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.title-area {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+
+
